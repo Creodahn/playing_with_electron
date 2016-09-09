@@ -3,9 +3,10 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'electron-test',
+    podModulePrefix: '',
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: null,
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -19,6 +20,15 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.contentSecurityPolicy = {
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+    'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
+    'connect-src': "'self' http://localhost:3000",
+    'img-src': "'self' data:",
+    'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+    'media-src': "'self'"
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -29,6 +39,7 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
+
     ENV.locationType = 'none';
 
     // keep test console output quieter
@@ -39,7 +50,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;
