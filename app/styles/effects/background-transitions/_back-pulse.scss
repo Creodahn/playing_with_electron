@@ -1,0 +1,26 @@
+/* Back Pulse */
+@include keyframes(#{$name-space}-back-pulse) {
+  50% {
+    background-color: rgba(32, 152, 209, .75);
+  }
+}
+
+@mixin back-pulse {
+  @include hacks;
+  overflow: hidden;
+  @include prefixed(transition-duration, $slow-duration);
+  @include prefixed(transition-property, 'color, background-color');
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include prefixed(animation-name, #{$name-space}-back-pulse);
+    @include prefixed(animation-duration, 1s);
+    @include prefixed(animation-delay, $slow-duration);
+    @include prefixed(animation-timing-function, linear);
+    @include prefixed(animation-iteration-count, infinite);
+    background-color: $active-color;
+    background-color: rgba(32, 152, 209, 1);
+    color: white;
+  }
+}

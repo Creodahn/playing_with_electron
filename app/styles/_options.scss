@@ -1,0 +1,82 @@
+// DEFAULT OPTIONS
+
+// Prefix for Hover class names
+$name-space: 'hvr' !default;
+
+// Durations
+$fast-duration: .1s !default;
+$medium-duration: .3s !default;
+$slow-duration: .5s !default;
+
+// Colors
+$primary-color: #e1e1e1 !default;
+$secondary-color: #666 !default;
+$highlight-color: #ccc !default;
+$active-color: #cc5656 !default;
+
+// Speech bubbles options
+$tip-width: 10px !default;  //the width of the speech bubble tip
+$tip-height: 10px !default; //the height of the speech bubble tip
+$tip-color: $primary-color !default;
+
+// Arrows options
+$space-between-text-and-arrows: 2.2em !default;
+
+// Curl dimensions
+$curl-width: 25px !default;
+$curl-height: 25px !default;
+
+// Curl colors
+$reveal-area-color: white !default;    // reveal area behind the curl
+$curl-line-color: #aaa !default;       // crease line
+$curl-transition-color: #ccc !default;  // color transitioning from crease line to final color
+$curl-last-color: white !default;    // final color of the back of the curl
+
+// Browser Prefixes - Which CSS prefixes should be used?
+$use-webkit: true !default;
+$use-old-webkit: true !default;
+$use-moz: true !default;
+$use-ms: true !default;
+$use-old-o: true !default;
+$use-o: true !default;
+
+// Compile with or without classes
+$include-classes: true !default;
+
+//Connect Colors
+$black: #000;
+$connect-red: #cc5656;
+$connect-red-error: #e74c3c;
+$connect-purple: #639;
+$connect-green: #28ae60;
+$connect-blue: #5691cc;
+$connect-button-color: #34495e;
+$connect-off-white: #ecf0f1;
+$connect-light-gray: #d3d3d3;
+$danger: #a94442;
+$focus-border: #66afe9;
+$rejected: #ab0902;
+$shadow-color: rgba(0, 0, 0, .4) !default;
+$white: #fff;
+
+//Tax Colors
+$tax-disabled: #b6b6b6;
+$tax-red: #b60000;
+$tax-green: #00b600;
+$tax-blue: #0000b6;
+
+//Basic Variables
+$base-font-size: 14px;
+$custom-timing-function: cubic-bezier(.05, .69, .14, 1);
+$disabled-link: #676767;
+$link-color: #337ab7;
+$faded-link: rgba(51, 122, 183, .7);
+$focus-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+$highlight-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 15px rgba(30, 129, 207, .9);
+$shadow: 0 5px 10px -5px $shadow-color;
+
+//Prefixes
+$webkit: -webkit-;
+$moz: -moz-;
+$ms: -ms-;
+$o: -o-;

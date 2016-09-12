@@ -1,0 +1,16 @@
+//placeholder rules
+button {
+  .open-dev-tools {
+    border: 1px solid #fff;
+  }
+
+  .open-directory {
+    border: 1px solid #000;
+  }
+
+  .open-file {
+    border: 1px solid #aaa;
+  }
+
+  @include display-flex;
+}

@@ -1,11 +1,21 @@
 /* jshint node: true */
 'use strict';
 
+const $                    = require('jquery');
 const electron             = require('electron');
 const path                 = require('path');
-const {app, BrowserWindow} = electron;
+const {app, BrowserWindow, dialog} = electron;
 const dirname              = __dirname || path.resolve(path.dirname());
 const emberAppLocation     = `file://${dirname}/dist/index.html`;
+const fs                   = require('graceful-fs');
+
+const fileTypeFilters = {
+        filters: [
+          { name: 'Images',
+            extensions: ['bmp', 'gif', 'jpg', 'png']
+          }
+        ]
+      };
 
 let mainWindow = null;
 
@@ -67,6 +77,21 @@ app.on('ready', function onReady() {
         mainWindow = null;
     });
 
+    // $('.open-dev-tools').on('click', (e) => {
+    //   alert('clicked dev tool button');
+    //   openDevTools();
+    // });
+    //
+    // $('.open-directory').on('click', (e) => {
+    //   alert('clicked open directory button');
+    //   openDir();
+    // });
+    //
+    // $('.open-file').on('click', (e) => {
+    //   alert('clicked open file button');
+    //   openFile();
+    // });
+
     // Handle an unhandled error in the main thread
     //
     // Note that 'uncaughtException' is a crude mechanism for exception handling intended to
@@ -88,3 +113,33 @@ app.on('ready', function onReady() {
         console.log(`Exception: ${err}`);
     });
 });
+
+const OpenDevTools = function() {
+  mainWindow.openDevTools();
+}
+
+const openDir = function() {
+  let dir = dialog.showOpenDialog(mainWindow, {
+    properties: ['openDirectory']
+  });
+
+  if(!dir) {
+    return;
+  }
+
+  console.log(dir);
+}
+
+const openFile = function() {
+  let files = dialog.showOpenDialog(mainWindow, {
+    filters: fileTypeFilters,
+    properties: ['openFile']
+  });
+
+  if(!files) {
+    return;
+  }
+
+  //handle files
+  console.log(files);
+}

@@ -1,0 +1,777 @@
+/*!
+ * Hover.css (http://ianlunn.github.io/Hover/)
+ * Version: 2.0.2
+ * Author: Ian Lunn @IanLunn
+ * Author URL: http://ianlunn.co.uk/
+ * Github: https://github.com/IanLunn/Hover
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ * Hover.css Copyright Ian Lunn 2014. Generated with Sass.
+ */
+
+/* 2D TRANSITIONS */
+@import 'effects/2d-transitions/grow';
+@if $include-classes {
+  .#{$name-space}-grow {
+    @include grow;
+  }
+}
+
+@import 'effects/2d-transitions/shrink';
+@if $include-classes {
+  .#{$name-space}-shrink {
+    @include shrink;
+  }
+}
+
+@import 'effects/2d-transitions/pulse';
+@if $include-classes {
+  .#{$name-space}-pulse {
+    @include pulse;
+  }
+}
+
+@import 'effects/2d-transitions/pulse-grow';
+@if $include-classes {
+  .#{$name-space}-pulse-grow {
+    @include pulse-grow;
+  }
+}
+
+@import 'effects/2d-transitions/pulse-shrink';
+@if $include-classes {
+  .#{$name-space}-pulse-shrink {
+    @include pulse-shrink;
+  }
+}
+
+@import 'effects/2d-transitions/push';
+@if $include-classes {
+  .#{$name-space}-push {
+    @include push;
+  }
+}
+
+@import 'effects/2d-transitions/pop';
+@if $include-classes {
+  .#{$name-space}-pop {
+    @include pop;
+  }
+}
+
+@import 'effects/2d-transitions/bounce-in';
+@if $include-classes {
+  .#{$name-space}-bounce-in {
+    @include bounce-in;
+  }
+}
+
+@import 'effects/2d-transitions/bounce-out';
+@if $include-classes {
+  .#{$name-space}-bounce-out {
+    @include bounce-out;
+  }
+}
+
+@import 'effects/2d-transitions/rotate';
+@if $include-classes {
+  .#{$name-space}-rotate {
+    @include rotate;
+  }
+}
+
+@import 'effects/2d-transitions/grow-rotate';
+@if $include-classes {
+  .#{$name-space}-grow-rotate {
+    @include grow-rotate;
+  }
+}
+
+@import 'effects/2d-transitions/float';
+@if $include-classes {
+  .#{$name-space}-float {
+    @include float  ;
+  }
+}
+
+@import 'effects/2d-transitions/sink';
+@if $include-classes {
+  .#{$name-space}-sink {
+    @include sink  ;
+  }
+}
+
+@import 'effects/2d-transitions/bob';
+@if $include-classes {
+  .#{$name-space}-bob {
+    @include bob  ;
+  }
+}
+
+@import 'effects/2d-transitions/hang';
+@if $include-classes {
+  .#{$name-space}-hang {
+    @include hang  ;
+  }
+}
+
+@import 'effects/2d-transitions/skew';
+@if $include-classes {
+  .#{$name-space}-skew {
+    @include skew  ;
+  }
+}
+
+@import 'effects/2d-transitions/skew-forward';
+@if $include-classes {
+  .#{$name-space}-skew-forward {
+    @include skew-forward  ;
+  }
+}
+
+@import 'effects/2d-transitions/skew-backward';
+@if $include-classes {
+  .#{$name-space}-skew-backward {
+    @include skew-backward  ;
+  }
+}
+
+@import 'effects/2d-transitions/wobble-vertical';
+@if $include-classes {
+  .#{$name-space}-wobble-vertical {
+    @include wobble-vertical  ;
+  }
+}
+
+@import 'effects/2d-transitions/wobble-horizontal';
+@if $include-classes {
+  .#{$name-space}-wobble-horizontal {
+    @include wobble-horizontal  ;
+  }
+}
+
+@import 'effects/2d-transitions/wobble-to-bottom-right';
+@if $include-classes {
+  .#{$name-space}-wobble-to-bottom-right {
+    @include wobble-to-bottom-right  ;
+  }
+}
+
+@import 'effects/2d-transitions/wobble-to-top-right';
+@if $include-classes {
+  .#{$name-space}-wobble-to-top-right {
+    @include wobble-to-top-right  ;
+  }
+}
+
+@import 'effects/2d-transitions/wobble-top';
+@if $include-classes {
+  .#{$name-space}-wobble-top {
+    @include wobble-top  ;
+  }
+}
+
+@import 'effects/2d-transitions/wobble-bottom';
+@if $include-classes {
+  .#{$name-space}-wobble-bottom {
+    @include wobble-bottom  ;
+  }
+}
+
+@import 'effects/2d-transitions/wobble-skew';
+@if $include-classes {
+  .#{$name-space}-wobble-skew {
+    @include wobble-skew  ;
+  }
+}
+
+@import 'effects/2d-transitions/buzz';
+@if $include-classes {
+  .#{$name-space}-buzz {
+    @include buzz  ;
+  }
+}
+
+@import 'effects/2d-transitions/buzz-out';
+@if $include-classes {
+  .#{$name-space}-buzz-out {
+    @include buzz-out  ;
+  }
+}
+
+/* BACKGROUND TRANSITIONS */
+@import 'effects/background-transitions/fade';
+@if $include-classes {
+  .#{$name-space}-fade {
+    @include fade  ;
+  }
+}
+
+@import 'effects/background-transitions/back-pulse';
+@if $include-classes {
+  .#{$name-space}-back-pulse {
+    @include back-pulse  ;
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-right';
+@if $include-classes {
+  .#{$name-space}-sweep-to-right {
+    @include sweep-to-right  ;
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-left';
+@if $include-classes {
+  .#{$name-space}-sweep-to-left {
+    @include sweep-to-left  ;
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-bottom';
+@if $include-classes {
+  .#{$name-space}-sweep-to-bottom {
+    @include sweep-to-bottom  ;
+  }
+}
+
+@import 'effects/background-transitions/sweep-to-top';
+@if $include-classes {
+  .#{$name-space}-sweep-to-top {
+    @include sweep-to-top  ;
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-right';
+@if $include-classes {
+  .#{$name-space}-bounce-to-right {
+    @include bounce-to-right  ;
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-left';
+@if $include-classes {
+  .#{$name-space}-bounce-to-left {
+    @include bounce-to-left  ;
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-bottom';
+@if $include-classes {
+  .#{$name-space}-bounce-to-bottom {
+    @include bounce-to-bottom  ;
+  }
+}
+
+@import 'effects/background-transitions/bounce-to-top';
+@if $include-classes {
+  .#{$name-space}-bounce-to-top {
+    @include bounce-to-top  ;
+  }
+}
+
+@import 'effects/background-transitions/radial-out';
+@if $include-classes {
+  .#{$name-space}-radial-out {
+    @include radial-out  ;
+  }
+}
+
+@import 'effects/background-transitions/radial-in';
+@if $include-classes {
+  .#{$name-space}-radial-in {
+    @include radial-in  ;
+  }
+}
+
+@import 'effects/background-transitions/rectangle-in';
+@if $include-classes {
+  .#{$name-space}-rectangle-in {
+    @include rectangle-in  ;
+  }
+}
+
+@import 'effects/background-transitions/rectangle-out';
+@if $include-classes {
+  .#{$name-space}-rectangle-out {
+    @include rectangle-out  ;
+  }
+}
+
+@import 'effects/background-transitions/shutter-in-horizontal';
+@if $include-classes {
+  .#{$name-space}-shutter-in-horizontal {
+    @include shutter-in-horizontal  ;
+  }
+}
+
+@import 'effects/background-transitions/shutter-out-horizontal';
+@if $include-classes {
+  .#{$name-space}-shutter-out-horizontal {
+    @include shutter-out-horizontal  ;
+  }
+}
+
+@import 'effects/background-transitions/shutter-in-vertical';
+@if $include-classes {
+  .#{$name-space}-shutter-in-vertical {
+    @include shutter-in-vertical  ;
+  }
+}
+
+@import 'effects/background-transitions/shutter-out-vertical';
+@if $include-classes {
+  .#{$name-space}-shutter-out-vertical {
+    @include shutter-out-vertical  ;
+  }
+}
+
+
+/* BORDER TRANSITIONS */
+@import 'effects/border-transitions/border-fade';
+@if $include-classes {
+  .#{$name-space}-border-fade {
+    @include border-fade  ;
+  }
+}
+
+@import 'effects/border-transitions/hollow';
+@if $include-classes {
+  .#{$name-space}-hollow {
+    @include hollow  ;
+  }
+}
+
+@import 'effects/border-transitions/trim';
+@if $include-classes {
+  .#{$name-space}-trim {
+    @include trim  ;
+  }
+}
+
+@import 'effects/border-transitions/ripple-out';
+@if $include-classes {
+  .#{$name-space}-ripple-out {
+    @include ripple-out  ;
+  }
+}
+
+@import 'effects/border-transitions/ripple-in';
+@if $include-classes {
+  .#{$name-space}-ripple-in {
+    @include ripple-in  ;
+  }
+}
+
+@import 'effects/border-transitions/outline-out';
+@if $include-classes {
+  .#{$name-space}-outline-out {
+    @include outline-out  ;
+  }
+}
+
+@import 'effects/border-transitions/outline-in';
+@if $include-classes {
+  .#{$name-space}-outline-in {
+    @include outline-in  ;
+  }
+}
+
+@import 'effects/border-transitions/round-corners';
+@if $include-classes {
+  .#{$name-space}-round-corners {
+    @include round-corners  ;
+  }
+}
+
+@import 'effects/border-transitions/underline-from-left';
+@if $include-classes {
+  .#{$name-space}-underline-from-left {
+    @include underline-from-left  ;
+  }
+}
+
+@import 'effects/border-transitions/underline-from-center';
+@if $include-classes {
+  .#{$name-space}-underline-from-center {
+    @include underline-from-center  ;
+  }
+}
+
+@import 'effects/border-transitions/underline-from-right';
+@if $include-classes {
+  .#{$name-space}-underline-from-right {
+    @include underline-from-right  ;
+  }
+}
+
+@import 'effects/border-transitions/overline-from-left';
+@if $include-classes {
+  .#{$name-space}-overline-from-left {
+    @include overline-from-left  ;
+  }
+}
+
+@import 'effects/border-transitions/overline-from-center';
+@if $include-classes {
+  .#{$name-space}-overline-from-center {
+    @include overline-from-center  ;
+  }
+}
+
+@import 'effects/border-transitions/overline-from-right';
+@if $include-classes {
+  .#{$name-space}-overline-from-right {
+    @include overline-from-right  ;
+  }
+}
+
+@import 'effects/border-transitions/reveal';
+@if $include-classes {
+  .#{$name-space}-reveal {
+    @include reveal  ;
+  }
+}
+
+@import 'effects/border-transitions/underline-reveal';
+@if $include-classes {
+  .#{$name-space}-underline-reveal {
+    @include underline-reveal  ;
+  }
+}
+
+@import 'effects/border-transitions/overline-reveal';
+@if $include-classes {
+  .#{$name-space}-overline-reveal {
+    @include overline-reveal  ;
+  }
+}
+
+
+/* SHADOW/GLOW TRANSITIONS */
+@import 'effects/shadow-and-glow-transitions/glow';
+@if $include-classes {
+  .#{$name-space}-glow {
+    @include glow  ;
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/shadow';
+@if $include-classes {
+  .#{$name-space}-shadow {
+    @include shadow  ;
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/grow-shadow';
+@if $include-classes {
+  .#{$name-space}-grow-shadow {
+    @include grow-shadow  ;
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/box-shadow-outset';
+@if $include-classes {
+  .#{$name-space}-box-shadow-outset {
+    @include box-shadow-outset  ;
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/box-shadow-inset';
+@if $include-classes {
+  .#{$name-space}-box-shadow-inset {
+    @include box-shadow-inset  ;
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/float-shadow';
+@if $include-classes {
+  .#{$name-space}-float-shadow {
+    @include float-shadow  ;
+  }
+}
+
+@import 'effects/shadow-and-glow-transitions/shadow-radial';
+@if $include-classes {
+  .#{$name-space}-shadow-radial {
+    @include shadow-radial  ;
+  }
+}
+
+/* SPEECH BUBBLES */
+@import 'effects/speech-bubbles/bubble-top';
+@if $include-classes {
+  .#{$name-space}-bubble-top {
+    @include bubble-top  ;
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-right';
+@if $include-classes {
+  .#{$name-space}-bubble-right {
+    @include bubble-right  ;
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-bottom';
+@if $include-classes {
+  .#{$name-space}-bubble-bottom {
+    @include bubble-bottom  ;
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-left';
+@if $include-classes {
+  .#{$name-space}-bubble-left {
+    @include bubble-left  ;
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-top';
+@if $include-classes {
+  .#{$name-space}-bubble-float-top {
+    @include bubble-float-top  ;
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-right';
+@if $include-classes {
+  .#{$name-space}-bubble-float-right {
+    @include bubble-float-right  ;
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-bottom';
+@if $include-classes {
+  .#{$name-space}-bubble-float-bottom {
+    @include bubble-float-bottom  ;
+  }
+}
+
+@import 'effects/speech-bubbles/bubble-float-left';
+@if $include-classes {
+  .#{$name-space}-bubble-float-left {
+    @include bubble-float-left  ;
+  }
+}
+
+/* ICONS */
+@import 'effects/icons/icon-back';
+@if $include-classes {
+  .#{$name-space}-icon-back {
+    @include icon-back  ;
+  }
+}
+
+@import 'effects/icons/icon-forward';
+@if $include-classes {
+  .#{$name-space}-icon-forward {
+    @include icon-forward  ;
+  }
+}
+
+@import 'effects/icons/icon-down';
+@if $include-classes {
+  .#{$name-space}-icon-down {
+    @include icon-down  ;
+  }
+}
+
+@import 'effects/icons/icon-up';
+@if $include-classes {
+  .#{$name-space}-icon-up {
+    @include icon-up  ;
+  }
+}
+
+@import 'effects/icons/icon-spin';
+@if $include-classes {
+  .#{$name-space}-icon-spin {
+    @include icon-spin  ;
+  }
+}
+
+@import 'effects/icons/icon-drop';
+@if $include-classes {
+  .#{$name-space}-icon-drop {
+    @include icon-drop  ;
+  }
+}
+
+@import 'effects/icons/icon-fade';
+@if $include-classes {
+  .#{$name-space}-icon-fade {
+    @include icon-fade  ;
+  }
+}
+
+@import 'effects/icons/icon-float-away';
+@if $include-classes {
+  .#{$name-space}-icon-float-away {
+    @include icon-float-away  ;
+  }
+}
+
+@import 'effects/icons/icon-sink-away';
+@if $include-classes {
+  .#{$name-space}-icon-sink-away {
+    @include icon-sink-away  ;
+  }
+}
+
+@import 'effects/icons/icon-grow';
+@if $include-classes {
+  .#{$name-space}-icon-grow {
+    @include icon-grow  ;
+  }
+}
+
+@import 'effects/icons/icon-shrink';
+@if $include-classes {
+  .#{$name-space}-icon-shrink {
+    @include icon-shrink  ;
+  }
+}
+
+@import 'effects/icons/icon-pulse';
+@if $include-classes {
+  .#{$name-space}-icon-pulse {
+    @include icon-pulse  ;
+  }
+}
+
+@import 'effects/icons/icon-pulse-grow';
+@if $include-classes {
+  .#{$name-space}-icon-pulse-grow {
+    @include icon-pulse-grow  ;
+  }
+}
+
+@import 'effects/icons/icon-pulse-shrink';
+@if $include-classes {
+  .#{$name-space}-icon-pulse-shrink {
+    @include icon-pulse-shrink  ;
+  }
+}
+
+@import 'effects/icons/icon-push';
+@if $include-classes {
+  .#{$name-space}-icon-push {
+    @include icon-push  ;
+  }
+}
+
+@import 'effects/icons/icon-pop';
+@if $include-classes {
+  .#{$name-space}-icon-pop {
+    @include icon-pop  ;
+  }
+}
+
+@import 'effects/icons/icon-bounce';
+@if $include-classes {
+  .#{$name-space}-icon-bounce {
+    @include icon-bounce  ;
+  }
+}
+
+@import 'effects/icons/icon-rotate';
+@if $include-classes {
+  .#{$name-space}-icon-rotate {
+    @include icon-rotate  ;
+  }
+}
+
+@import 'effects/icons/icon-grow-rotate';
+@if $include-classes {
+  .#{$name-space}-icon-grow-rotate {
+    @include icon-grow-rotate  ;
+  }
+}
+
+@import 'effects/icons/icon-float';
+@if $include-classes {
+  .#{$name-space}-icon-float {
+    @include icon-float  ;
+  }
+}
+
+@import 'effects/icons/icon-sink';
+@if $include-classes {
+  .#{$name-space}-icon-sink {
+    @include icon-sink  ;
+  }
+}
+
+@import 'effects/icons/icon-bob';
+@if $include-classes {
+  .#{$name-space}-icon-bob {
+    @include icon-bob  ;
+  }
+}
+
+@import 'effects/icons/icon-hang';
+@if $include-classes {
+  .#{$name-space}-icon-hang {
+    @include icon-hang  ;
+  }
+}
+
+@import 'effects/icons/icon-wobble-horizontal';
+@if $include-classes {
+  .#{$name-space}-icon-wobble-horizontal {
+    @include icon-wobble-horizontal  ;
+  }
+}
+
+@import 'effects/icons/icon-wobble-vertical';
+@if $include-classes {
+  .#{$name-space}-icon-wobble-vertical {
+    @include icon-wobble-vertical  ;
+  }
+}
+
+@import 'effects/icons/icon-buzz';
+@if $include-classes {
+  .#{$name-space}-icon-buzz {
+    @include icon-buzz  ;
+  }
+}
+
+@import 'effects/icons/icon-buzz-out';
+@if $include-classes {
+  .#{$name-space}-icon-buzz-out {
+    @include icon-buzz-out  ;
+  }
+}
+
+/* CURLS */
+@import 'effects/curls/curl-top-left';
+@if $include-classes {
+  .#{$name-space}-curl-top-left {
+    @include curl-top-left  ;
+  }
+}
+
+@import 'effects/curls/curl-top-right';
+@if $include-classes {
+  .#{$name-space}-curl-top-right {
+    @include curl-top-right  ;
+  }
+}
+
+@import 'effects/curls/curl-bottom-right';
+@if $include-classes {
+  .#{$name-space}-curl-bottom-right {
+    @include curl-bottom-right  ;
+  }
+}
+
+@import 'effects/curls/curl-bottom-left';
+@if $include-classes {
+  .#{$name-space}-curl-bottom-left {
+    @include curl-bottom-left  ;
+  }
+}

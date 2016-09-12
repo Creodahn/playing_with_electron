@@ -46,6 +46,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "ember-welcome-page": "^1.0.1",
+    "file-bin": "^0.7.0",
     "loader.js": "^4.0.1"
   },
   "main": "electron.js",
@@ -89,5 +90,9 @@
       "ProductName": null,
       "InternalName": null
     }
+  },
+  "dependencies": {
+    "graceful-fs": "^4.1.6",
+    "jquery": "^3.1.0"
   }
 }

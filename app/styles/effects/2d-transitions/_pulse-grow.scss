@@ -1,0 +1,20 @@
+/* Pulse Grow */
+@include keyframes(#{$name-space}-pulse-grow) {
+  to {
+    @include prefixed(transform, scale(1.1));
+  }
+}
+
+@mixin pulse-grow {
+  @include hacks;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include prefixed(animation-name, #{$name-space}-pulse-grow);
+    @include prefixed(animation-duration, $medium-duration);
+    @include prefixed(animation-timing-function, linear);
+    @include prefixed(animation-iteration-count, infinite);
+    @include prefixed(animation-direction, alternate);
+  }
+}

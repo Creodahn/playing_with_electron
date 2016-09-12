@@ -1,0 +1,37 @@
+/* Icon Push */
+@include keyframes(#{$name-space}-icon-push) {
+  50% {
+    @include prefixed(transform, scale(.5));
+  }
+}
+
+@mixin icon-push {
+  @include hacks;
+  position: relative;
+  padding-right: #{$space-between-text-and-arrows};
+  @include prefixed(transition-duration, $medium-duration);
+
+  &::before {
+    content: '\f006';
+    position: absolute;
+    right: 1em;
+    padding: 0 1px;
+    font-family: FontAwesome;
+    @include prefixed(transform, translateZ(0));
+    @include prefixed(transition-duration, $medium-duration);
+    @include prefixed(transition-property, transform);
+    @include prefixed(transition-timing-function, ease-out);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+
+    &::before {
+      @include prefixed(animation-name, #{$name-space}-icon-push);
+      @include prefixed(animation-duration, $medium-duration);
+      @include prefixed(animation-timing-function, linear);
+      @include prefixed(animation-iteration-count, 1);
+    }
+  }
+}

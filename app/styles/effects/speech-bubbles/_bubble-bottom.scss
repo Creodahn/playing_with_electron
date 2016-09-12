@@ -1,0 +1,25 @@
+/* Bubble Bottom */
+@mixin bubble-bottom {
+  @include hacks;
+  position: relative;
+
+  &::before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    border-style: solid;
+    @include prefixed(transition-duration, $medium-duration);
+    @include prefixed(transition-property, transform);
+    left: calc(50% - #{$tip-width});
+    bottom: 0;
+    border-width: $tip-height $tip-width 0 $tip-width;
+    border-color: $tip-color transparent transparent transparent;
+  }
+
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    @include prefixed(transform, translateY($tip-height));
+  }
+}
