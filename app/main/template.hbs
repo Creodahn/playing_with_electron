@@ -1,6 +1,15 @@
 <div class="main">
-  <h1>Justin Drew</h1>
-  <button class="open-dev-tools">Open Dev Tools</button>
-  <button class="open-directory">Open a Directory</button>
-  <button class="open-file">Open a File</button>
+  <button {{action "openDevTools"}} class="open-dev-tools">Open Dev Tools</button>
+  <button {{action "openDir"}} class="open-directory">Open a Directory</button>
+  <button {{action "openFile"}} class="open-file">Open a File</button>
+  <ul>
+    {{#each files as |file|}}
+      <li>
+        <a href="" {{action "getFile" file.name}}>{{file.name}}</a>
+      </li>
+    {{/each}}
+  </ul>
+  <div class="img-container">
+    <img src={{img-src}} alt={{fileName}}>
+  </div>
 </div>

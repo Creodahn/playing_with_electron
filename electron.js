@@ -10,12 +10,12 @@ const emberAppLocation     = `file://${dirname}/dist/index.html`;
 const fs                   = require('graceful-fs');
 
 const fileTypeFilters = {
-        filters: [
-          { name: 'Images',
-            extensions: ['bmp', 'gif', 'jpg', 'png']
-          }
-        ]
-      };
+  filters: [
+    { name: 'Images',
+      extensions: ['bmp', 'gif', 'jpg', 'png']
+    }
+  ]
+};
 
 let mainWindow = null;
 
@@ -30,116 +30,103 @@ let mainWindow = null;
 // });
 
 app.on('window-all-closed', function onWindowAllClosed() {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
 });
 
 app.on('ready', function onReady() {
-    mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600
-    });
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600
+  });
 
-    delete mainWindow.module;
+  delete mainWindow.module;
 
-    // If you want to open up dev tools programmatically, call
-    // mainWindow.openDevTools();
+  // If you want to open up dev tools programmatically, call
+  // mainWindow.openDevTools();
 
-    // By default, we'll open the Ember App by directly going to the
-    // file system.
-    //
-    // Please ensure that you have set the locationType option in the
-    // config/environment.js file to 'hash'. For more information,
-    // please consult the ember-electron readme.
+  // By default, we'll open the Ember App by directly going to the
+  // file system.
+  //
+  // Please ensure that you have set the locationType option in the
+  // config/environment.js file to 'hash'. For more information,
+  // please consult the ember-electron readme.
+  mainWindow.loadURL(emberAppLocation);
+
+  // If a loading operation goes wrong, we'll send Electron back to
+  // Ember App entry point
+  mainWindow.webContents.on('did-fail-load', function() {
     mainWindow.loadURL(emberAppLocation);
+  });
 
-    // If a loading operation goes wrong, we'll send Electron back to
-    // Ember App entry point
-    mainWindow.webContents.on('did-fail-load', () => {
-        mainWindow.loadURL(emberAppLocation);
-    });
+  mainWindow.webContents.on('crashed', function() {
+    console.log('Your Ember app (or other code) in the main window has crashed.');
+    console.log('This is a serious issue that needs to be handled and/or debugged.');
+  });
 
-    mainWindow.webContents.on('crashed', () => {
-        console.log('Your Ember app (or other code) in the main window has crashed.');
-        console.log('This is a serious issue that needs to be handled and/or debugged.');
-    });
+  mainWindow.on('unresponsive', function() {
+    console.log('Your Ember app (or other code) has made the window unresponsive.');
+  });
 
-    mainWindow.on('unresponsive', () => {
-        console.log('Your Ember app (or other code) has made the window unresponsive.');
-    });
+  mainWindow.on('responsive', function() {
+    console.log('The main window has become responsive again.');
+  });
 
-    mainWindow.on('responsive', () => {
-        console.log('The main window has become responsive again.');
-    });
+  mainWindow.on('closed', function() {
+    mainWindow = null;
+  });
 
-    mainWindow.on('closed', () => {
-        mainWindow = null;
-    });
-
-    // $('.open-dev-tools').on('click', (e) => {
-    //   alert('clicked dev tool button');
-    //   openDevTools();
-    // });
-    //
-    // $('.open-directory').on('click', (e) => {
-    //   alert('clicked open directory button');
-    //   openDir();
-    // });
-    //
-    // $('.open-file').on('click', (e) => {
-    //   alert('clicked open file button');
-    //   openFile();
-    // });
-
-    // Handle an unhandled error in the main thread
-    //
-    // Note that 'uncaughtException' is a crude mechanism for exception handling intended to
-    // be used only as a last resort. The event should not be used as an equivalent to
-    // "On Error Resume Next". Unhandled exceptions inherently mean that an application is in
-    // an undefined state. Attempting to resume application code without properly recovering
-    // from the exception can cause additional unforeseen and unpredictable issues.
-    //
-    // Attempting to resume normally after an uncaught exception can be similar to pulling out
-    // of the power cord when upgrading a computer -- nine out of ten times nothing happens -
-    // but the 10th time, the system becomes corrupted.
-    //
-    // The correct use of 'uncaughtException' is to perform synchronous cleanup of allocated
-    // resources (e.g. file descriptors, handles, etc) before shutting down the process. It is
-    // not safe to resume normal operation after 'uncaughtException'.
-    process.on('uncaughtException', (err) => {
-        console.log('An exception in the main thread was not handled.');
-        console.log('This is a serious issue that needs to be handled and/or debugged.');
-        console.log(`Exception: ${err}`);
-    });
+  // Handle an unhandled error in the main thread
+  //
+  // Note that 'uncaughtException' is a crude mechanism for exception handling intended to
+  // be used only as a last resort. The event should not be used as an equivalent to
+  // "On Error Resume Next". Unhandled exceptions inherently mean that an application is in
+  // an undefined state. Attempting to resume application code without properly recovering
+  // from the exception can cause additional unforeseen and unpredictable issues.
+  //
+  // Attempting to resume normally after an uncaught exception can be similar to pulling out
+  // of the power cord when upgrading a computer -- nine out of ten times nothing happens -
+  // but the 10th time, the system becomes corrupted.
+  //
+  // The correct use of 'uncaughtException' is to perform synchronous cleanup of allocated
+  // resources (e.g. file descriptors, handles, etc) before shutting down the process. It is
+  // not safe to resume normal operation after 'uncaughtException'.
+  process.on('uncaughtException', function(err) {
+      console.log('An exception in the main thread was not handled.');
+      console.log('This is a serious issue that needs to be handled and/or debugged.');
+      console.log(`Exception: ${err}`);
+  });
 });
 
-const OpenDevTools = function() {
-  mainWindow.openDevTools();
-}
-
-const openDir = function() {
-  let dir = dialog.showOpenDialog(mainWindow, {
+const openDir = (function() {
+  let dir = dialog.showOpenDialog(this, {
     properties: ['openDirectory']
   });
 
   if(!dir) {
-    return;
+    return null;
   }
 
   console.log(dir);
-}
+  return dir[0];
+}).bind(mainWindow);
 
 const openFile = function() {
-  let files = dialog.showOpenDialog(mainWindow, {
+  let files = dialog.showOpenDialog(this, {
     filters: fileTypeFilters,
     properties: ['openFile']
   });
 
   if(!files) {
-    return;
+    return [];
   }
 
   //handle files
   console.log(files);
-}
+  return files;
+};
+
+exports.mainWindow = mainWindow;
+exports.openDir = openDir;
+exports.openFile = openFile;
