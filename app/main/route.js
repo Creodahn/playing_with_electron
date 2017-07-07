@@ -13,6 +13,29 @@ const currentWindow = electron.remote.getCurrentWindow();
 export default Ember.Route.extend({
   setupController(controller, model) {
     this._super(controller, model);
+
+    Ember.run.scheduleOnce('afterRender', function() {
+      $('canvas').resizable();
+
+      $('canvas').draggable({
+        // containment: '.modal',
+        // handle: '.modal-header'
+      });
+    });
+
+    controller.addObserver('img-src', function() {
+      let canvas = $('canvas').get(0),
+          ctx = $(canvas).get(0).getContext('2d'),
+          img = new Image();
+
+      ctx.clearRect(0, 0, $(canvas).width(), $(canvas).height());
+
+      img.src = this.get('img-src');
+
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+      };
+    });
   },
   actions: {
     getDataURI(data) {

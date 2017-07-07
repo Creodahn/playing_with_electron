@@ -5,5 +5,8 @@
     "ember-cli-shims": "0.1.1",
     "ember-qunit-notifications": "0.1.0",
     "jquery": "2.2.4"
+  },
+  "devDependencies": {
+    "jquery-ui": "^1.12.1"
   }
 }

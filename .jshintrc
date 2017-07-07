@@ -3,7 +3,8 @@
     "document",
     "window",
     "-Promise",
-    "require"
+    "require",
+    "$"
   ],
   "browser": true,
   "boss": true,
