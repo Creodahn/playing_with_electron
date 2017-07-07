@@ -1,0 +1,36 @@
+/* Curl Top Left */
+@mixin curl-top-left {
+  @include hacks;
+  position: relative;
+
+  &::before {
+    pointer-events: none;
+    position: absolute;
+    content: '';
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: $reveal-area-color; /* IE9 */
+    background: linear-gradient(
+      135deg,
+      $reveal-area-color 45%,
+      $curl-line-color 50%,
+      $curl-transition-color 56%,
+      $curl-last-color 80%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#000000');/*For IE7-8-9*/
+
+    z-index: 1000;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+    @include prefixed(transition-duration, $medium-duration);
+    @include prefixed(transition-property, 'width, height');
+  }
+
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    width: $curl-width;
+    height: $curl-height;
+  }
+}

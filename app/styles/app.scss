@@ -1,30 +1,14 @@
-body {
-  background-image: url('images/rockies_panoramic_desaturated.png');
-  background-size: cover;
-  font-family: 'Rock Salt', cursive;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+//import settings
+@import 'hacks';
+@import 'options';
 
-.main {
-  & > h1 {
-    background: #333;
-    color: white;
-    font-size: 7vw;
-    font-weight: 800;
-    left: 35%;
-    letter-spacing: 8px;
-    line-height: 60px;
-    margin: 0;
-    mix-blend-mode: multiply;
-    padding: 21px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+//import dependencies
+@import 'functions';
+@import 'mixins';
 
-  height: 100vh;
-  width: 100vw;
-}
+//import base styling
+@import 'buttons';
+@import 'element-defaults';
+@import 'hover';
+@import 'images';
+@import 'layout';

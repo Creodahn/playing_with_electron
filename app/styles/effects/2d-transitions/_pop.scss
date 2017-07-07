@@ -1,0 +1,19 @@
+/* Pop */
+@include keyframes(#{$name-space}-pop) {
+  50% {
+    @include prefixed(transform, scale(1.2));
+  }
+}
+
+@mixin pop {
+  @include hacks;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @include prefixed(animation-name, #{$name-space}-pop);
+    @include prefixed(animation-duration, $medium-duration);
+    @include prefixed(animation-timing-function, linear);
+    @include prefixed(animation-iteration-count, 1);
+  }
+}

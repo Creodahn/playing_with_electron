@@ -1,0 +1,38 @@
+/* Icon Buzz */
+@include keyframes(#{$name-space}-icon-buzz) {
+  50% {
+    @include prefixed(transform, translateX(3px) rotate(2deg));
+  }
+
+  100% {
+    @include prefixed(transform, translateX(-3px) rotate(-2deg));
+  }
+}
+
+@mixin icon-buzz {
+  @include hacks;
+  position: relative;
+  padding-right: 2.2em;
+  @include prefixed(transition-duration, $medium-duration);
+
+  &::before {
+    content: '\f017';
+    position: absolute;
+    right: 1em;
+    padding: 0 1px;
+    font-family: FontAwesome;
+    @include prefixed(transform, translateZ(0));
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+
+    &::before {
+      @include prefixed(animation-name, #{$name-space}-icon-buzz);
+      @include prefixed(animation-duration, .15s);
+      @include prefixed(animation-timing-function, linear);
+      @include prefixed(animation-iteration-count, infinite);
+    }
+  }
+}
