@@ -1,11 +1,21 @@
 /* jshint node: true */
 'use strict';
 
+const $                    = require('jquery');
 const electron             = require('electron');
 const path                 = require('path');
 const {app, BrowserWindow, Menu, Tray} = electron;
 const dirname              = __dirname || path.resolve(path.dirname());
 const emberAppLocation     = `file://${dirname}/dist/index.html`;
+const fs                   = require('graceful-fs');
+
+const fileTypeFilters = {
+  filters: [
+    { name: 'Images',
+      extensions: ['bmp', 'gif', 'jpg', 'png']
+    }
+  ]
+};
 
 let mainWindow = null,
     tray = null;
@@ -91,3 +101,35 @@ app.on('ready', function onReady() {
     console.log(`Exception: ${err}`);
   });
 });
+
+const openDir = (function() {
+  let dir = dialog.showOpenDialog(this, {
+    properties: ['openDirectory']
+  });
+
+  if(!dir) {
+    return null;
+  }
+
+  console.log(dir);
+  return dir[0];
+}).bind(mainWindow);
+
+const openFile = function() {
+  let files = dialog.showOpenDialog(this, {
+    filters: fileTypeFilters,
+    properties: ['openFile']
+  });
+
+  if(!files) {
+    return [];
+  }
+
+  //handle files
+  console.log(files);
+  return files;
+};
+
+exports.mainWindow = mainWindow;
+exports.openDir = openDir;
+exports.openFile = openFile;
